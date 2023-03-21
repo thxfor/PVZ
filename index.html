@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		.shooter {
+			width: 80px; 
+			position: absolute; 	
+		}
+
+		.abs {
+			position: absolute;
+			transition: 6s;
+		}
+
+		.box {
+			background-image: url(game.png);
+			height: 1000px; 
+			background-size: 100% 100%;
+		}
+		.zombies {
+			width: 80px; 
+			position: absolute;
+			transition: 1s;
+		}
+	</style>
+</head>
+<body>	
+	
+	<div class="box" style="">
+		
+		<h3 style="position: absolute; left: 755px; top: 50px; color: white;">Ваши очки:
+			<span class="score">0</span>
+		</h3>
+		<div style="top: 140px; left: 2000px; " class="abs">
+			<img src="мол.jpg" style="width: 700px;">
+		</div>
+
+		<!--ГОРОХИ-->
+	    <img class="shooter" src="peashooter.png"  style="top: 280px; left: 620px;">		
+		<img class="shooter" src="peashooter.png"  style="top: 400px; left: 620px">	
+		<img class="shooter" src="peashooter.png"  style="top: 540px; left: 620px">	
+		<img class="shooter" src="peashooter.png"  style="top: 650px; left: 620px">
+		<img class="shooter" src="peashooter.png"  style="top: 760px; left: 620px">
+
+
+		<!--ЗОМБИ-->
+		<img class="zombies" src="zombie1.png" style="top: 220px; left: 1500px;">
+		<img class="zombies" src="zombie2.png" style="top: 370px; left: 1500px;">
+		<img class="zombies" src="zombie2.png" style="top: 520px; left: 1500px;">
+		<img class="zombies" src="zombie4.png" style="top: 630px; left: 1500px;">
+		<img class="zombies" src="zombie4.png" style="top: 740px; left: 1500px;">
+
+		
+	</div>
+<script>
+	let shooters = document.querySelectorAll('.shooter');
+	let zombies = document.querySelectorAll('.zombies');
+	let left1 = 1500;
+	let left2 = 1500;
+	let left3 = 1500;
+	let left4 = 1500;
+	let left5 = 1500;
+	let score = 0;
+		zombies[0].onclick = function (){
+			left1 = left1 - 100;
+			zombies[0].style.left = left1 + "px";
+			console.log(left1);
+
+			if(left1==600) {
+				shooters[0].style.display = "none";
+				score = score + 1;
+				document.querySelector('.score').innerHTML = score;
+			} 
+
+			if(score==2) {
+				document.querySelector('.abs').style.left = "-1000px"
+			}
+
+			if(score==5) {
+				zombies[0].style.display = "none";
+				zombies[1].style.display = "none";
+				zombies[2].style.display = "none";
+				zombies[3].style.display = "none";
+				zombies[4].style.display = "none";
+				alert('Победа')
+			}
+		}
+
+		zombies[1].onclick = function (){
+			left2 = left2 - 100;
+			zombies[1].style.left = left2 + "px";
+			console.log(left2);
+
+			if(left2==600) {
+				shooters[1].style.display = "none"
+				score = score + 1
+				document.querySelector('.score').innerHTML = score
+			} 
+
+			if(score==2) {
+				document.querySelector('.abs').style.left = "-1000px"
+			}
+
+			if(score==5) {
+				zombies[0].style.display = "none";
+				zombies[1].style.display = "none";
+				zombies[2].style.display = "none";
+				zombies[3].style.display = "none";
+				zombies[4].style.display = "none";
+				alert('Победа')
+			}
+		}
+
+		zombies[2].onclick = function (){
+			left3 = left3 - 100;
+			zombies[2].style.left = left3 + "px";
+			console.log(left3);
+
+			if(left3==600) {
+				shooters[2].style.display = "none"
+				score = score + 1
+				document.querySelector('.score').innerHTML = score
+			} 
+
+			if(score==2) {
+				document.querySelector('.abs').style.left = "-1000px"
+			}
+
+			if(score==5) {
+				zombies[0].style.display = "none";
+				zombies[1].style.display = "none";
+				zombies[2].style.display = "none";
+				zombies[3].style.display = "none";
+				zombies[4].style.display = "none";
+				alert('Победа')
+			}
+		}
+
+		zombies[3].onclick = function (){
+			left4 = left4 - 100;
+			zombies[3].style.left = left4 + "px";
+			console.log(left4);
+
+			if(left4==600) {
+				shooters[3].style.display = "none"
+				score = score + 1
+				document.querySelector('.score').innerHTML = score
+			} 
+
+			if(score==2) {
+				document.querySelector('.abs').style.left = "-1000px"
+			}
+
+			if(score==5) {
+				zombies[0].style.display = "none";
+				zombies[1].style.display = "none";
+				zombies[2].style.display = "none";
+				zombies[3].style.display = "none";
+				zombies[4].style.display = "none";
+				alert('Победа')
+			}
+		}
+
+		zombies[4].onclick = function (){
+			left5 = left5 - 100;
+			zombies[4].style.left = left5 + "px";
+			console.log(left5);
+
+			if(left5==600) {
+				shooters[4].style.display = "none"
+				score = score + 1
+				document.querySelector('.score').innerHTML = score
+			} 
+
+			if(score==2) {
+				document.querySelector('.abs').style.left = "-1000px"
+			}
+
+			if(score==5) {
+				zombies[0].style.display = "none";
+				zombies[1].style.display = "none";
+				zombies[2].style.display = "none";
+				zombies[3].style.display = "none";
+				zombies[4].style.display = "none";
+				alert('Победа')
+			}
+		}
+		
+
+</script>
+</body>
+</html>
